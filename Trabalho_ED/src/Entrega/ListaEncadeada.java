@@ -222,7 +222,7 @@ public class ListaEncadeada {
            temp.setProx(anterior);
        }
        
-       public void checa(String x){
+       public void checa(String[] x){
            No temp = ini;
            int count = 1;
           String[] vetor=  {"a", "b", "c", "d", "e","f","g","h","i","j", "k", "l", "m","n", "o","p","q","r","s","t","u","v","w","x","y","z"};
@@ -230,11 +230,26 @@ public class ListaEncadeada {
            while(temp != null){
                if(temp.getElemento().equals(x)){
                    System.out.println(count);
-                   removeOrdenado(x);
-                   insereInicio(x);
-               }
+                   removeOrdenado(x[count]);
+                   insereInicio(x[count]);
+               } 
                temp = temp.getProx();
                count++;
+           }
+       }
+       
+       public void compactador(String[] texto){
+           No temp = ini;
+           char[] alfabeto=  {'a', 'b', 'c', 'd', 'e','f','g','h','i','j', 'k', 'l', 'm','n', 'o','p','q','r','s','t','u','v','w','x','y','z'};
+           String retorno = "";
+
+           for(int i = 0; i < texto.length; i++){
+               System.out.println(texto[i]);
+                   if(texto[i].matches("/[a-z]+/i")){
+                       System.out.println("match");
+                   } else {
+                       System.out.println("not a match");
+                   }
            }
        }
        

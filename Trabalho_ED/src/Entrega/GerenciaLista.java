@@ -19,26 +19,27 @@ public class GerenciaLista {
     public static void main(String[] args) throws IOException {
         ListaEncadeada list = new ListaEncadeada();
         list.insereInicio("Oi");
-        list.insereFinal("tudo");
-        list.insereFinal("legal?");
-        list.insereFinal("show?");
-        list.insereFinal("bem?");
-         list.insereFinal("que bom!");
-        System.out.println(list);
-        list.checa(leArquivo());
-        System.out.println(list);
+//        list.insereFinal("tudo");
+//        list.insereFinal("legal?");
+//        list.insereFinal("show?");
+//        list.insereFinal("bem?");
+//        list.insereFinal("que bom!");
+//        System.out.println(list);
+//        list.checa(leArquivo());
         
+        String[] ler = leArquivo();
+        
+        list.compactador(ler);
     }
     
-            public static String leArquivo() throws FileNotFoundException, IOException{
+            public static String[] leArquivo() throws FileNotFoundException, IOException{
             
                 FileReader arquivo = new FileReader("texto.txt");
                 BufferedReader leBufferizado = new BufferedReader(arquivo); 
                 String linha = leBufferizado.readLine();
                 String dados[] = linha.split(" ");
                 
-                System.out.println("texto: "+linha);
-                return linha;
+                return dados;
 }
     
 }
