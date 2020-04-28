@@ -18,18 +18,22 @@ public class GerenciaLista {
     
     public static void main(String[] args) throws IOException {
         ListaEncadeada list = new ListaEncadeada();
-        list.insereInicio("Oi");
+//        list.insereInicio("Oi");
 //        list.insereFinal("tudo");
 //        list.insereFinal("legal?");
 //        list.insereFinal("show?");
 //        list.insereFinal("bem?");
 //        list.insereFinal("que bom!");
 //        System.out.println(list);
-//        list.checa(leArquivo());
+//       list.checa(leArquivo());
         
         String[] ler = leArquivo();
-        
+        for(int i = 0; i < ler.length; i++){
+            System.out.print(" " + ler[i]);
+        }
+        System.out.println("");
         list.compactador(ler);
+        System.out.println(list);
     }
     
             public static String[] leArquivo() throws FileNotFoundException, IOException{
@@ -38,7 +42,6 @@ public class GerenciaLista {
                 BufferedReader leBufferizado = new BufferedReader(arquivo); 
                 String linha = leBufferizado.readLine();
                 String dados[] = linha.split(" ");
-                
                 return dados;
 }
     

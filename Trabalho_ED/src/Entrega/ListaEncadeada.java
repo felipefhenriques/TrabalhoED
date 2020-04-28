@@ -10,6 +10,7 @@ import java.io.FileNotFoundException;
 import java.io.FileReader;
 import java.io.IOException;
 
+
 /**
  *
  * @author Felipe
@@ -239,18 +240,30 @@ public class ListaEncadeada {
        }
        
        public void compactador(String[] texto){
-           No temp = ini;
-           char[] alfabeto=  {'a', 'b', 'c', 'd', 'e','f','g','h','i','j', 'k', 'l', 'm','n', 'o','p','q','r','s','t','u','v','w','x','y','z'};
-           String retorno = "";
-
+           ListaEncadeada lista2 = new ListaEncadeada();
+          int count = 0;
+           
            for(int i = 0; i < texto.length; i++){
-               System.out.println(texto[i]);
-                   if(texto[i].matches("/[a-z]+/i")){
-                       System.out.println("match");
-                   } else {
-                       System.out.println("not a match");
-                   }
+               for(int j = 0; j < texto[i].length(); j++){
+                    if(Character.isLetter(texto[i].charAt(j))){
+                        System.out.println(texto[i].charAt(j) + ": é válido");
+                      } else {
+                        System.out.println(texto[i].charAt(j) + ": não é");
+                    }
+               }  
            }
+           No temp = ini;              
+                                   
+       }
+       
+       public No recursivo(String texto, No temp, ListaEncadeada lista2){
+           if(texto == temp.getElemento()){
+               System.out.println(temp.getElemento()+ " não inserido ");
+           } else {
+               lista2.insereInicio(temp.getElemento());
+               System.out.println(temp.getElemento() + " inserido ");
+           }
+           return recursivo(texto, temp.getProx(), lista2);
        }
        
 
