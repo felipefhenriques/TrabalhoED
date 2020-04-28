@@ -53,6 +53,7 @@ public class ListaEncadeada {
        public void insereFinalRec(String elemento){
            insereFinalRec(ini, elemento);
        }
+       
        public void insereFinalRec(No temp, String elemento){
            if(temp==null){
                No novo = new No(elemento, ini);
@@ -278,5 +279,27 @@ public class ListaEncadeada {
            }
            return strLista;
        }
+//       public static String juntaLetras(){
+//        int count=0;
+//        String palavra="";
+//        char letra;
+//        do{
+//        
+//        System.out.println("Digite uma letra");
+//        letra = sc.next().charAt(0);
+//        if(Character.isLetter(letra)){
+//        palavra += letra;
+//        count++;
+//       }
+//        if(letra==' '){
+//           count++;
+//        }
+//        else{
+//        count++;
+//        }
+//        }while(Character.isLetter(letra));
+//        return palavra;
+//        
+//    } 
 
    }

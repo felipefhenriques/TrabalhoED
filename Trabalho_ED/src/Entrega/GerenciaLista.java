@@ -13,7 +13,7 @@ import java.io.IOException;
 /**
  *
  * @author Felipe
- */
+ */ 
 public class GerenciaLista {
     
     public static void main(String[] args) throws IOException {
@@ -31,9 +31,10 @@ public class GerenciaLista {
         for(int i = 0; i < ler.length; i++){
             System.out.print(" " + ler[i]);
         }
-        System.out.println("");
+        
         list.compactador(ler);
         System.out.println(list);
+        System.out.println("0");
     }
     
             public static String[] leArquivo() throws FileNotFoundException, IOException{
