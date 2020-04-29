@@ -224,16 +224,16 @@ public class ListaEncadeada {
            temp.setProx(anterior);
        }
        
-       public void checa(String[] x){
+       public void checa(String x){
            No temp = ini;
            int count = 1;
           String[] vetor=  {"a", "b", "c", "d", "e","f","g","h","i","j", "k", "l", "m","n", "o","p","q","r","s","t","u","v","w","x","y","z"};
          
            while(temp != null){
                if(temp.getElemento().equals(x)){
-                   System.out.println(count);
-                   removeOrdenado(x[count]);
-                   insereInicio(x[count]);
+                   System.out.println(x);
+                   removeOrdenado(x);
+                   insereInicio(x);
                } 
                temp = temp.getProx();
                count++;
@@ -244,16 +244,29 @@ public class ListaEncadeada {
            ListaEncadeada lista2 = new ListaEncadeada();
           int count = 0;
            
-           for(int i = 0; i < texto.length; i++){
-               for(int j = 0; j < texto[i].length(); j++){
-                    if(Character.isLetter(texto[i].charAt(j))){
-                        System.out.println(texto[i].charAt(j) + ": é válido");
-                      } else {
-                        System.out.println(texto[i].charAt(j) + ": não é");
-                    }
-               }  
-           }
-           No temp = ini;              
+          for(int i = 0; i < texto.length;i++){
+              insereInicio(texto[i]);
+          }
+          No temp = ini;
+          
+          
+          while(temp !=null){
+               lista2.checa(temp.getElemento());
+               System.out.println("executador");
+               temp = temp.getProx();
+          }
+         
+          
+//           for(int i = 0; i < texto.length; i++){
+//               for(int j = 0; j < texto[i].length(); j++){
+//                    if(Character.isLetter(texto[i].charAt(j))){
+//                        System.out.println(texto[i].charAt(j) + ": é válido");
+//                      } else {
+//                        System.out.println(texto[i].charAt(j) + ": não é");
+//                    }
+//               }  
+//           }
+//           No temp = ini;              
                                    
        }
        
